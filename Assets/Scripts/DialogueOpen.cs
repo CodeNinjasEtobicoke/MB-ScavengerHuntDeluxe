@@ -26,6 +26,7 @@ public class DialogueOpen : MonoBehaviour
     public void createClue()
     {
         clue = Random.Range(0, 9);
+        searchDialogue();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,17 +36,19 @@ public class DialogueOpen : MonoBehaviour
             checkClue();
         }
         greeting.Play(0);
+        interfaceManager.GetComponent<InterfaceManager>().ShowBox(dialogue, clue);
     }
 
     private void checkClue()
     {
         if (pHolding.holdValue == clue)
         {
+            dialogue = "You skibidied on my " + collectibles[clue] + "! Skibidi ohio sigma rizz!";
             end = true;
         }
         else
         {
-
+            dialogue = "Tralelo tralala! thats not Brr Brr Patapim " + collectibles[clue] + ".";
         }
     }
 
@@ -54,4 +57,8 @@ public class DialogueOpen : MonoBehaviour
         begin = false;
     }
 
+    public void searchDialogue()
+    {
+        dialogue = "Im skibidi, so help me skibidi on my " + collectibles[clue];
+    }
 }
