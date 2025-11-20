@@ -12,6 +12,16 @@ public class DialogueOpen : MonoBehaviour
     public bool end = false;
     private string[] collectibles;
     private int clue;
+    private Sprite collectible0;
+    private Sprite collectible1;
+    private Sprite collectible2;
+    private Sprite collectible3;
+    private Sprite collectible4;
+    private Sprite collectible5;
+    private Sprite collectible6;
+    private Sprite collectible7;
+    private Sprite collectible8;
+    private Sprite collectable9;
 
     private AudioSource greeting;
 
@@ -26,7 +36,7 @@ public class DialogueOpen : MonoBehaviour
     public void createClue()
     {
         clue = Random.Range(0, 9);
-        searchDialogue();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,9 +66,41 @@ public class DialogueOpen : MonoBehaviour
     {
         begin = false;
     }
-
-    public void searchDialogue()
+    public void switchp()
     {
-        dialogue = "Im skibidi, so help me skibidi on my " + collectibles[clue];
+        switch (clue)
+        {
+            case 1:
+                dialogue = "test1" + collectibles[clue];
+                break;
+            case 2:
+                dialogue = "test2" + collectible2;
+                break;
+            case 3:
+                dialogue = "test2" + collectible3;
+                break;
+            case 4:
+                dialogue = "test2" + collectible4;
+                break;
+            case 5:
+                dialogue = "test2" + collectible5;
+                break;
+            case 6:
+                dialogue = "test2" + collectible6;
+                break;
+            case 7:
+                dialogue = "test2" + collectible7;
+                break;
+            case 8:
+                dialogue = "test2" + collectible8;
+                break;
+            case 9:
+                dialogue = "test2" + collectable9;
+                break;
+            case 0:
+                dialogue = "test2" + collectible0;
+                break;
+        }
+
     }
 }

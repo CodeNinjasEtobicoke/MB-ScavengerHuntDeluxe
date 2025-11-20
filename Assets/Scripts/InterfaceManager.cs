@@ -16,59 +16,60 @@ public class InterfaceManager : MonoBehaviour
     public GameObject randomSpawn;
     public Image collectable;
     public GameObject showSprite;
-    public Sprite collectable0;
     [SerializeField]
     private Sprite[] collectibleSource;
     private int clue;
     private string[] collectible;
     public Image myImage;
-    Sprite collectible0;
+    private Sprite collectible0;
+    private Sprite collectible1;
+    private Sprite collectible2;
+    private Sprite collectible3;
+    private Sprite collectible4;
+    private Sprite collectible5;
+    private Sprite collectible6;
+    private Sprite collectible7;
+    private Sprite collectible8;
+    private Sprite collectable9;
 
     // Start is called before the first frame update
-    
-    
+
+
     void Start()
     { // Generates a number from 0 to 9
-        if (clue == 0)
-        {
-            zero();
-        }
-        else if (clue == 1)
-        {
-            one();
-        }
-        else if (clue == 2)
-        {
-            two();
-        }
-        else if (clue == 3)
-        {
-            three();
-        }
-        else if (clue == 4)
-        {
-            four();
-        }
-        else if (clue == 5)
-        {
-            five();
-        }
-        else if (clue == 6) 
-        {
-            sixSeven(); 
-        }
-        else if (clue == 7)
-        {
-            UncOfSixSeven();
-        }
-        else if (clue == 8)
-        {
-            eight();
-        }
-        else if (clue == 9)
-        {
-            nine();
-        }
+        //switch (clue)
+        //{
+        //    case 1:
+        //        dialogueText.text = "test1" + collectible1;
+        //        break;
+        //    case 2:
+        //        dialogueText.text = "test2" + collectible2;
+        //        break;
+        //    case 3:
+        //        dialogueText.text = "test2" + collectible3;
+        //        break;
+        //    case 4:
+        //        dialogueText.text = "test2" + collectible4;
+        //        break;
+        //    case 5:
+        //        dialogueText.text = "test2" + collectible5;
+        //        break;
+        //    case 6:
+        //        dialogueText.text = "test2" + collectible6;
+        //        break;
+        //    case 7:
+        //        dialogueText.text = "test2" + collectible7;
+        //        break;
+        //    case 8:
+        //        dialogueText.text = "test2" + collectible8;
+        //        break;
+        //    case 9:
+        //        dialogueText.text = "test2" + collectable9;
+        //        break;
+        //    case 0:
+        //        dialogueText.text = "test2" + collectible0;
+        //        break;
+        //}
         dialogueBox.SetActive(false);
         showSprite.SetActive(false);
 
@@ -93,14 +94,9 @@ public class InterfaceManager : MonoBehaviour
     public void createClue()
     {
         clue = UnityEngine.Random.Range(0, 9);
-        searchDialogue();
     }
 
     // Update is called once per frame
-    public void searchDialogue()
-    {
-        dialogueText.text = "Im skibidi, so help me skibidi on my " + collectible[clue] + "?";
-    }
 
     public void CollectibleUpdate(int item)
     {
@@ -123,47 +119,5 @@ public class InterfaceManager : MonoBehaviour
     {
         randomSpawn.GetComponent<RandomSpawn>().DistributeCollectibles();
         npc.GetComponent<DialogueOpen>().coinsScattered();
-    }
-
-    private void zero()
-    {
-        dialogueText.text = "Help me record the 5th shrek movie with the " + collectible[clue] + "!";
-    }
-
-    private void one()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void two()
-    {
-        dialogueText.text = "SOMEONES DROWNING HURRY " + collectible[clue] + "!";
-    }
-    private void three()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void four()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void five()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void sixSeven()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void UncOfSixSeven()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void eight()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
-    }
-    private void nine()
-    {
-        dialogueText.text = "My son wants his " + collectible[clue];
     }
 }
